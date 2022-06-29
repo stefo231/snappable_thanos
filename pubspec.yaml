@@ -1,6 +1,6 @@
 name: snappable_thanos
-description: Package for Thanos's Snap Effect.
-version: 0.0.2
+description: Package for Thanos's Snap Effect. Use it to turn your Widgets into dust. For fun only!
+version: 0.0.3
 repository: https://github.com/stefo231/snappable_thanos
 
 environment:

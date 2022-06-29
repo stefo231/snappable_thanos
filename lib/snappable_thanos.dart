@@ -101,7 +101,7 @@ class SnappableState extends State<Snappable>
       onTap: widget.snapOnTap ? () => isGone ? reset() : snap() : null,
       child: Stack(
         children: <Widget>[
-          if (_layers != null) ..._layers.map(_imageToWidget),
+          if (_layers != []) ..._layers.map(_imageToWidget),
           AnimatedBuilder(
             animation: _animationController,
             builder: (context, child) {
