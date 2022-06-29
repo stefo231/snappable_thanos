@@ -1,4 +1,4 @@
-# snappable
+# snappable_thanos
 
 Thanos's Snap effect library in Flutter
 
@@ -14,7 +14,7 @@ Check out [blog post](https://fidev.io/thanos) describing the package on [Fidev]
 
 ### Import it
 ```dart
-import 'package:snappable/snappable.dart';
+import 'package:snappable_thanos/snappable_thanos.dart';
 ```
 
 ### Wrap any widget in Snappable

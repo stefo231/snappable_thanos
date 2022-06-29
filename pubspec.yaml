@@ -1,6 +1,6 @@
 name: snappable_thanos
 description: Package for Thanos's Snap Effect.
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/stefo231/snappable_thanos
 
 environment:
