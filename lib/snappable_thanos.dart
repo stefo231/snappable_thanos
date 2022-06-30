@@ -152,6 +152,8 @@ class SnappableState extends State<Snappable>
       }
     }
 
+    //* compute allows us to run _encodeImages in separate isolate
+    //* as it's too slow to work on the main thread
     _layers = await compute<List<image.Image>, List<Uint8List>>(
         _encodeImages, images);
 
