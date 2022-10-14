@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Code formating for better pub score, no changes were made.
+
 ## 0.0.3
 
 * Bug Fix, added description for better analysys

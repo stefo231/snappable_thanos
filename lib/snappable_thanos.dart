@@ -1,7 +1,6 @@
 library snappable_thanos;
 
 import 'dart:math' as math;
-import 'dart:typed_data';
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
@@ -52,11 +51,9 @@ class Snappable extends StatefulWidget {
   SnappableState createState() => SnappableState();
 }
 
-class SnappableState extends State<Snappable>
-    with SingleTickerProviderStateMixin {
+class SnappableState extends State<Snappable> with SingleTickerProviderStateMixin {
   static const double _singleLayerAnimationLength = 0.6;
-  static const double _lastLayerAnimationStart =
-      1 - _singleLayerAnimationLength;
+  static const double _lastLayerAnimationStart = 1 - _singleLayerAnimationLength;
 
   bool get isGone => _animationController.isCompleted;
   bool get isInProgress => _animationController.isAnimating;
@@ -154,8 +151,7 @@ class SnappableState extends State<Snappable>
 
     //* compute allows us to run _encodeImages in separate isolate
     //* as it's too slow to work on the main thread
-    _layers = await compute<List<image.Image>, List<Uint8List>>(
-        _encodeImages, images);
+    _layers = await compute<List<image.Image>, List<Uint8List>>(_encodeImages, images);
 
     //prepare random dislocations and set state
     setState(() {
@@ -239,8 +235,7 @@ class SnappableState extends State<Snappable>
 
   /// Gets an Image from a [child] and caches [size] for later us
   Future<image.Image> _getImageFromWidget() async {
-    RenderRepaintBoundary? boundary =
-        _globalKey.currentContext?.findRenderObject() as RenderRepaintBoundary;
+    RenderRepaintBoundary? boundary = _globalKey.currentContext?.findRenderObject() as RenderRepaintBoundary;
     //cache image for later
     size = boundary.size;
     var img = await boundary.toImage();
@@ -250,8 +245,7 @@ class SnappableState extends State<Snappable>
     return image.decodeImage(pngBytes!)!;
   }
 
-  int _gauss(double center, double value) =>
-      (1000 * math.exp(-(math.pow((value - center), 2) / 0.14))).round();
+  int _gauss(double center, double value) => (1000 * math.exp(-(math.pow((value - center), 2) / 0.14))).round();
 }
 
 /// This is slow! Run it in separate isolate
